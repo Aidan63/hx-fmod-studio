@@ -36,6 +36,7 @@ class Setup
     </files>
     <target id="haxe">
         <lib name="$fmodStudioLib"/>
+        <lib name="$fmodLib"/>
     </target>';
 
         clazz.get().meta.add(":buildXml", [{ expr : EConst(CString(buildXml)), pos : pos }], pos);
