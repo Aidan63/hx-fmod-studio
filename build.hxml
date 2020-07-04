@@ -1,0 +1,8 @@
+-cp src
+-D analyzer-optimize
+-D fmod_inc=C:\Program Files (x86)\FMOD SoundSystem\FMOD Studio API Windows\api\core\inc
+-D fmod_lib=C:\Program Files (x86)\FMOD SoundSystem\FMOD Studio API Windows\api\core\lib\x64\fmod_vc.lib
+-D fmod_studio_inc=C:\Program Files (x86)\FMOD SoundSystem\FMOD Studio API Windows\api\studio\inc
+-D fmod_studio_lib=C:\Program Files (x86)\FMOD SoundSystem\FMOD Studio API Windows\api\studio\lib\x64\fmodstudio_vc.lib
+-D HXCPP_M64
+--cpp bin/cpp
