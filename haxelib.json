@@ -1,0 +1,10 @@
+{
+    "name": "hx-fmod-studio",
+    "license": "MIT",
+    "version" : "0.0.1",
+    "contributors": [
+        "Aidan"
+    ],
+    "releasenote": "initial release",
+    "classPath": "src"
+}
