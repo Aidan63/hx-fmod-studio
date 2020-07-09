@@ -1,6 +1,7 @@
 package hxfmod.studio;
 
 import haxe.io.Bytes;
+import hxfmod.studio.Bus;
 import hxfmod.studio.Bank;
 import hxfmod.studio.EventDescription;
 
@@ -180,6 +181,21 @@ class System
             return Failure(code);
         }
     }
+
+    public function getBus(_path : String) : Result<Bus, Error>
+    {
+        final bus : cpp.Star<NativeBus> = null;
+        final code = ptr.getBus(_path, cpp.Native.addressOf(bus));
+
+        if (code == Ok)
+        {
+            return Success(new Bus(cpp.Pointer.fromStar(bus)));
+        }
+        else
+        {
+            return Failure(code);
+        }
+    }
 }
 
 @:keep
@@ -209,6 +225,8 @@ extern class NativeSystem
     function loadBankMemory(_buffer : cpp.ConstCharStar, _length : Int, _mode : NativeMemoryLoadMode, _flags : Int, _bank : cpp.Star<cpp.Star<NativeBank>>) : Error;
 
     function getEvent(_path : cpp.ConstCharStar, _event : cpp.Star<cpp.Star<NativeEventDescription>>) : Error;
+
+    function getBus(_path : cpp.ConstCharStar, _event : cpp.Star<cpp.Star<NativeBus>>) : Error;
 }
 
 @:keep
